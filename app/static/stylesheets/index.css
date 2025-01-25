@@ -1,0 +1,222 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/css/weather-icons.min.css);
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #b2e0df;
+    height: 20vh;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.search-container{
+    background: transparent;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.search-container:hover > .search-input{
+    width: 400px;
+	background-color: rgba(245, 245, 220, 0.24);
+	padding: 0.5em;
+	border-radius: 3px;
+}
+
+.search-container .search-input{
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+
+}
+
+.search-container .search-btn .fas{
+    color: #5cbdbb;
+}
+
+@keyframes hoverShake {
+  0% {transform: skew(0deg,0deg);}
+  25% {transform: skew(5deg, 5deg);}
+  75% {transform: skew(-5deg, -5deg);}
+  100% {transform: skew(0deg,0deg);}
+}
+
+.search-container:hover{
+  animation: hoverShake 0.15s linear 3;
+}
+body {
+	background: linear-gradient(90deg, #7474BF 10%, #348AC7 90%);
+    overflow-x: hidden;
+    margin: 0;
+}
+#weather_wrapper{
+	width: 400px;
+	margin: 100px auto;
+}
+.weatherCard{
+	width: 400px;
+	height: 200px;
+	font-family: 'Open Sans';
+	position: relative;
+}
+.currentTemp{
+	width: 220px;
+	height: 200px;
+	background: rgb(41, 41, 41);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.currentWeather{
+	width: 180px;
+	height: 200px;
+	background: rgb(237, 237, 237);
+	margin: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.temp{
+	font-size: 80px;
+	text-align: center;
+	display: block;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	padding: 20px 0 0;
+}
+.location{
+	color: rgb(255, 255, 255);
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 30px;
+	display: block;
+}
+.conditions{
+	font-family: weathericons;
+	font-size: 80px;
+	display: block;
+	padding: 20px 0 0;
+	text-align: center;
+}
+.info{
+	width: 180px;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: rgb(42, 178, 234);
+	font-weight: 700;
+	color: rgb(255, 255, 255);
+	text-align: center;
+}
+.rain {
+	width: 50%;
+	position: absolute;
+	left: 10px;
+	word-spacing: 60px;
+	top: 3px;
+}
+.rain::before{
+	display: block;
+	content: '\f04e';
+	font-family: weathericons;
+	font-size: 40px;
+	left: 6px;
+	top: -4px;
+	position: absolute;
+}
+.wind {
+	width: 50%;
+	right: -10px;
+	position: absolute;
+	word-spacing: 60px;
+	top: 3px;
+}
+.wind::before{
+	display: block;
+	content: '\f050';
+	font-family: weathericons;
+	font-size: 25px;
+	left: -10px;
+	position: absolute;
+	top: 5px;
+}
+
+/* later design strat */
+.day_time{
+    width: 100vw;
+    height: 5em;
+    background-color: rgba(0, 0, 0, 0.219);
+    /* display: flex;
+    flex-flow: row wrap;
+    justify-content: center; */
+}
+.day_time > table{
+    width: inherit;
+    height: inherit;
+    overflow-x: auto;
+}
+
+td{
+    text-align: center;
+}
+
+th{
+   border-radius: 2px;
+   border-top: 2px solid rgb(139, 189, 255);
+   border-left: 2px solid rgb(139, 189, 255);
+   border-right: 2px solid rgb(139, 189, 255);
+}
+td{
+    border-radius: 2px;
+    border: 1px solid rgb(139, 189, 255);
+}
+
+th, td{
+	color: azure;
+	
+}
+.options{
+    margin: 1em;
+    display: flex;
+}
+.options > .option{
+    width: 20vw;
+    height: 20vw;
+    background-color: rgba(42, 29, 92, 0.137);
+    display: flex;
+    /* flex-flow: column wrap; */
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+    border-radius: 10px;
+}
+
+.option > h4{
+    font-size: 7em;
+    font-family: monospace;
+    color: #5f89a7;
+}
+.option > .name{
+    font-size: 0.7em;
+    color: wheat;
+    position: relative;
+    top: 1em;
+}
+.pressure{
+	font-size: 3em !important;
+}
+
+/* end  */
