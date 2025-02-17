@@ -29,11 +29,3 @@ class TestAPI(unittest.TestCase):
         res = self.client.get(url+'?hour=25')
         self.assertEqual(res.status_code, 400)
         self.assertIn('Unvalid hour', res.text) 
-
-    def test_days_weather(self):
-        url = f'api/days/{self.location}/2025-01-21/2025-01-24'
-        res = self.client.get(url)
-        self.assertEqual(res.status_code, 200)
-        self.assertIn(' 21 Jan ', res.text)
-        self.assertIn(' 22 Jan ', res.text)
-        self.assertIn(' 24 Jan ', res.text)

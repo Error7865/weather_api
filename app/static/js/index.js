@@ -17,9 +17,11 @@ $(document).ready(()=>{
     console.log('Feeling Alive.')
     if(address != undefined){
         let date = new Date();
+        console.log(`Address was ${address}.`)
         $.get(
             `/api/hour/${address}/${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}?hour=${date.getHours()}`,
         ).done((data)=>{
+            console.log('Here was data ', data)
             placeData(data)        
         })
         createTable()       //table was created
@@ -31,8 +33,8 @@ function start(){
     $.get(
         `/api/hour/${address}/${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}?hour=${date.getHours()}`,
     ).done((data)=>{
-        placeData(data)    
         console.log('Here was data ', data)    
+        placeData(data)    
     })
     createTable()       //table was created
 }
@@ -59,12 +61,13 @@ function placeData(data) {
     //only take front part of period on that 
     $('.title').text(data.location)
     $('.short-loc').text(address)
+    console.log('Here was data from placeData ', Math.round(data.snow))
     increaseTemp(temp, 50)  //set temprature
-    increaseNum($('.rain'), data['snow'].toFixed(), 'MM')     //adjust rain
-    increaseNum($('.wind'), data['wind'].toFixed(), 'MPH')     //adjust wind
-    increaseNum($('.humidity'), data.humidity.toFixed())     //adjust humidity
-    increaseNum($('.uv'), data.uv.toFixed())     //adjust uv
-    increaseNum($('.pressure'), data.pressure.toFixed(), undefined, 1)     //adjust air pressure
+    increaseNum($('.rain'), Math.round(data['snow']), 'MM')     //adjust rain
+    increaseNum($('.wind'), Math.round(data['windspeed']), 'MPH')     //adjust wind
+    increaseNum($('.humidity'), Math.round(data.humidity))     //adjust humidity
+    increaseNum($('.uv'), Math.round(data.uvindex))     //adjust uv
+    increaseNum($('.pressure'), Math.round(data.pressure), undefined, 1)     //adjust air pressure
 }
 
 function clearData(){
@@ -137,7 +140,7 @@ function ferheniteToCelcius(value) {
     /**This function will return ferhenite value 
      * to celcius value
      */
-    console.log('Here was another value ', value)
+    // console.log('Here was another value ', value)
     value = parseInt(value)
     return (5/9 * (value -32)).toFixed()
 }

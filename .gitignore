@@ -6,3 +6,9 @@ __pycache__
 
 #ignore virtual environment
 vir_env/*
+
+#test.py for testing
+test.py
+
+#ignore rdb files
+*.rdb
