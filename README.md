@@ -19,4 +19,4 @@ Endpoint will get return a certain hour weather info of a particular place.
 `/multiple/[location]/[date1]/[date2]` \
 Above endpoint will return thoes days info.
 
-This project creadted inspired by [roadmap.sh](https://roadmap.sh/projects/personal-blog)
+This project creadted inspired by [roadmap.sh](https://roadmap.sh/projects/weather-api-wrapper-service))
